@@ -6,11 +6,51 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <strong>Private Events</strong>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Events
+          </a>
+
+          <a class="navbar-item">
+            Invitations
+          </a>
+        </div>        
+
+        <% if logged_in? %>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <strong>Welcome <%= current_user.username %></strong>
+              <%= link_to "Log out", destroy_session_path, method: "delete", class: "button is-primary ml-5"%>
+              <% else %>
+                <%= link_to "Log in", login_path, class: "button is-light"%>
+                <%= link_to "Sign up", new_user_path, class: "button is-primary ml-5"%>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

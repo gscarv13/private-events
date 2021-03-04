@@ -1,0 +1,6 @@
+<h1>Login</h1>
+   <%= form_with url: new_session_path do |f| %>
+   <%= f.label(:username, "Username: ") %>
+   <%= f.text_field :username, placeholder: 'Enter your username' %>
+   <%= f.submit("Login") %>
+<% end %>
