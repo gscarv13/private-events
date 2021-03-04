@@ -14,10 +14,7 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <strong>Private Events</strong>
-        </a>
-
+        <%= link_to "Private Events", root_path, class: "navbar-item" %>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -51,6 +48,11 @@
         <% end %>
       </div>
     </nav>
-    <%= yield %>
+
+    <div class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
