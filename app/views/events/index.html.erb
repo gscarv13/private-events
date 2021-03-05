@@ -1,0 +1,11 @@
+<h1>index</h1>
+
+<% @events.each do |e| %>
+  <%= e.name %>
+  <%= e.date %>
+  <%= e.location %>
+  <%= e.description %>
+  <br>
+  <%= link_to "Details", e %>
+  <br>
+<% end %>
