@@ -1,1 +1,8 @@
-<h1>This is the home page</h1>
+<h1>Events Page</h1>
+
+<% @user.events.each do |event| %>
+  <h2><%= event.name %></h2>
+  <h3><%= event.date %></h3>
+  <h3><%= event.location %></h3>
+  <h3><%= event.description %></h3>
+<% end %>
