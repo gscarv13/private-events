@@ -1,6 +1,6 @@
 <h1><%= @user.username %>'s Profile</h1><br>
 
-<h2>My Events</h2>
+<h2>Created Events</h2>
 <% @user.events.each do |event| %>
   <h2><%= event.name %></h2>
   <p><%= event.date %></p>
@@ -10,8 +10,19 @@
 <% end %>
 
 
-<h2>My Upcomming events</h2>
+<h2>Events</h2>
 
 <% @user.attendances.each do |attendance| %>
-  <p><%= attendance.attended_event.name %></p>
+
+  <% if attendance.upcomming_event %>
+
+    <h2>Future Events</h2>
+    <p><%= attendance.upcomming_event.name %></p>
+
+  <% elsif attendance.past_event %>
+    <h2>Attended Events</h2>
+    <p><%= attendance.past_event.name %></p>
+
+  <% end %>
+
 <% end %>

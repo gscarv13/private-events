@@ -1,6 +1,21 @@
-<h1>index</h1>
+<h1>Home</h1>
 
-<% @events.each do |e| %>
+
+<h2>Future events</h2><br><br>
+<% @future.each do |e| %>
+  <%= e.name %>
+  <%= e.date %>
+  <%= e.location %>
+  <%= e.description %>
+  <br>
+  <%= link_to "Details", e %>
+  <br>
+<% end %>
+
+<hr>
+
+<h2>Past events</h2><br><br>
+<% @past.each do |e| %>
   <%= e.name %>
   <%= e.date %>
   <%= e.location %>
