@@ -1,8 +1,17 @@
-<h1>Events Page</h1>
+<h1><%= @user.username %>'s Profile</h1><br>
 
+<h2>My Events</h2>
 <% @user.events.each do |event| %>
   <h2><%= event.name %></h2>
-  <h3><%= event.date %></h3>
-  <h3><%= event.location %></h3>
-  <h3><%= event.description %></h3>
+  <p><%= event.date %></p>
+  <p><%= event.location %></p>
+  <p><%= event.description %></p>
+  <hr>
+<% end %>
+
+
+<h2>My Upcomming events</h2>
+
+<% @user.attendances.each do |attendance| %>
+  <p><%= attendance.attended_event.name %></p>
 <% end %>

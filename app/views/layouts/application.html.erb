@@ -37,7 +37,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <strong>Welcome <%= current_user.username %></strong>
+              <strong>Welcome <%= link_to "#{current_user.username}", current_user %></strong>
               <%= link_to "Log out", destroy_session_path, method: "delete", class: "button is-primary ml-5"%>
               <% else %>
                 <%= link_to "Log in", login_path, class: "button is-light"%>

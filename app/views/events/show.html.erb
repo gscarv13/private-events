@@ -1,4 +1,18 @@
-<h1>show</h1>
+<h1>Event details</h1>
 
 <br>
-<%= @event.name %>
+
+<h2><%= @event.name %></h2>
+
+<h3>Details</h3>
+<p>Location: <%= @event.location %> </p><br>
+<p>Date: <%= @event.date %></p><br>
+<p>Description: <%= @event.description %> </p>
+
+<hr>
+
+<h3>Attendance List</h3>
+
+<% @event.attendances.each do |attendance| %>
+  <p>attendance.attendee.username</p>
+<% end %>
