@@ -1,0 +1,23 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to "Private Events", root_path, class: "navbar-item ml-5 is-size-2" %>
+  </div>
+
+  <div class="navbar-menu is-active">
+    
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <% if logged_in? %>
+            <strong>Welcome <%= link_to "#{current_user.username}", current_user %></strong>
+            <%= link_to "New Event", new_event_path, class: "button is-light ml-3"%>
+            <%= link_to "Log out", destroy_session_path, method: "delete", class: "button is-primary ml-1"%>
+          <% else %>
+            <%= link_to "Log in", login_path, class: "button is-light"%>
+            <%= link_to "Sign up", new_user_path, class: "button is-primary ml-5"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
