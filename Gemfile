@@ -39,9 +39,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 4.0'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do

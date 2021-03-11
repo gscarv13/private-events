@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Events", type: :feature do 
+RSpec.feature 'Events', type: :feature do
   context 'create new event' do
     before(:each) do
       visit new_user_path
