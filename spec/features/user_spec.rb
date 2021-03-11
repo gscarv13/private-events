@@ -1,3 +1,5 @@
+# rubocop: disable Metrics/BlockLength
+
 require 'rails_helper'
 
 RSpec.feature 'Users' do
@@ -66,3 +68,4 @@ RSpec.feature 'Users' do
     end
   end
 end
+# rubocop: enable Metrics/BlockLength

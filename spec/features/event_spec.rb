@@ -1,3 +1,4 @@
+# rubocop: disable Metrics/BlockLength
 require 'rails_helper'
 
 RSpec.feature 'Events', type: :feature do
@@ -31,7 +32,7 @@ RSpec.feature 'Events', type: :feature do
       expect(page).to have_content('can\'t be blank')
     end
 
-    scenario 'should not be successful and preserve correct fields' do
+    scenario 'if not successful should preserve correct fields' do
       visit new_event_path
       within('form') do
         fill_in 'Name', with: 'Test Event'
@@ -43,3 +44,4 @@ RSpec.feature 'Events', type: :feature do
     end
   end
 end
+# rubocop: enable Metrics/BlockLength
