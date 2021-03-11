@@ -13,6 +13,7 @@
 
 <h3>Attendance List</h3>
 
-<% @event.attendances.each do |attendance| %>
-  <p>attendance.attendee.username</p>
+<% @event.attendances.each do |att| %>
+  <p><%=  att.attendee.username %></p>
 <% end %>
+

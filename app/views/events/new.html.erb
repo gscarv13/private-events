@@ -1,17 +1,9 @@
-<h1 class="mb-5">Create a new Event</h1>
+<h1 class="mb-5 is-size-4">Create a new Event</h1>
 
-<%= form_with model: @event do |f| %>
-  <%= f.label :name, "Name: " %>
-  <%= f.text_field :name, placeholder: "Name your event" %><br>
-
-  <%= f.label :location, "Location: " %>
-  <%= f.text_field :location %><br>
-
-  <%= f.label :date, "Date: " %>
-  <%= f.date_field :date %><br>
-
-  <%= f.label :description, "Descripton: " %>
-  <%= f.text_area :description %><br><br>
-
-  <%= f.submit %>
+<%= simple_form_for @event do |f| %>
+  <%= f.input :name,  wrapper: false, label_html: { class: "label m-0" }, input_html: { class: "m-3"}, input_html: { class: "m-3"} %>
+  <%= f.input :location,  wrapper: false, label_html: { class: "label m-0" }, input_html: { class: "m-3"}  %>
+  <%= f.input :date, as: :date, html5: true,  wrapper: false, label_html: { class: "label m-0" }, input_html: { class: "m-3"}  %>
+  <%= f.input :description, as: :text,  wrapper: false, label_html: { class: "label m-0" }, input_html: { class: "m-3"}   %> <br>
+  <%= f.button :submit, "Create Event", class:"button is-primary is-medium" %>
 <% end %>
