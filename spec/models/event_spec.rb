@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-
   before(:all) do
     params = { name: 'event', date: Time.now, location: 'Online', description: 'description of the event' }
     @event = Event.new(params)
@@ -27,5 +26,10 @@ RSpec.describe Event, type: :model do
     it 'ensure location presence' do
       expect(@no_location).to be false
     end
+  end
+
+  context 'associations' do
+    it { is_expected.to have_many(:attendances) }
+    it { is_expected.to belong_to(:user) }
   end
 end

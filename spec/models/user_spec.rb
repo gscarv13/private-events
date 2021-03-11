@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :model do
+RSpec.describe User, type: :model do
   before(:all) do
     @user = User.new(username: 'webdev2000')
     @invalid = User.new(username: ' ')
@@ -32,5 +32,10 @@ RSpec.describe 'Users', type: :model do
     it 'should save if valid' do
       expect(@user.save).to be true
     end
+  end
+
+  context 'associations' do
+    it { is_expected.to have_many(:events) }
+    it { is_expected.to have_many(:attendances) }
   end
 end
