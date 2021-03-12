@@ -7,13 +7,17 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <% if @event.attendees.include?(current_user) %>
-            <%= link_to 'Cancel Participation', destroy_participation_path, method: "delete", class: "button is-danger mt-3"%>
-          <% else %>
-            <%= link_to 'Participate', participate_path, class: "button is-primary mt-3" %>
+          <% if @event.creator != current_user.id  && @event.date > Time.now %>
+            <% if @event.attendees.include?(current_user)%>
+              <%= link_to 'Cancel Participation', destroy_participation_path, method: "delete", class: "button is-danger mt-3"%>
+            <% else %>
+              <%= link_to 'Participate', participate_path, class: "button is-primary mt-3" %>
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </nav>
+
+<%= @event.date %>

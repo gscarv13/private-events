@@ -6,6 +6,7 @@
 
 <p>Location: <%= @event.location %> </p><br>
 <p>Date: <%= @event.date %></p><br>
+<p>Creator: <%= @event.user.username %></p><br>
 <p>Description: <%= @event.description %> </p>
 
 <%= render 'event_nav' %>
@@ -14,8 +15,10 @@
 
 <h3>Attendance List</h3>
 <br>
+
+<div class="attendants">
 <% @event.attendances.each do |att| %>
   <p><%=  att.attendee.username %></p>
 <% end %>
-
+</div>
 

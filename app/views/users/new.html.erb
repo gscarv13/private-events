@@ -1,6 +1,6 @@
 <h1 class="is-size-3 mb-3">Sign Up form</h1>
 
-<% render 'shared/errors' if @user.errors.any? %>
+<%= render 'shared/errors' if @user.errors.any? %>
 
 <%= form_with model: @user do |f| %>
   <%= f.label :username, "Username: " %>
