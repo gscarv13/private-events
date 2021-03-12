@@ -1,0 +1,19 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to "back", root_path, class: "button is-warning mt-3" %>
+  </div>
+
+  <div class="navbar-menu is-active"> 
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <% if @event.attendees.include?(current_user) %>
+            <%= link_to 'Cancel Participation', destroy_participation_path, method: "delete", class: "button is-danger mt-3"%>
+          <% else %>
+            <%= link_to 'Participate', participate_path, class: "button is-primary mt-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -8,8 +8,8 @@
 <p>Date: <%= @event.date %></p><br>
 <p>Description: <%= @event.description %> </p>
 
+<%= render 'event_nav' %>
 
-<%= link_to "back", root_path, class: "button is-warning mt-3" %>
 <hr>
 
 <h3>Attendance List</h3>
@@ -17,4 +17,5 @@
 <% @event.attendances.each do |att| %>
   <p><%=  att.attendee.username %></p>
 <% end %>
+
 
