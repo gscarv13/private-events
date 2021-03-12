@@ -1,35 +1,10 @@
-<h1><%= @user.username %>'s Profile</h1><br>
+<h1 class="is-size-3"><%= @user.username %>'s Profile</h1><br>
 
-<h2>Created Events</h2>
-
-<% if @user.events.empty?  %>
-  <br>
-  <p>You haven't created any events.</p>
-  <br>
-<% end %>
-
-<% @user.events.each do |event| %>
-  <h2><%= event.name %></h2>
-  <p><%= event.date %></p>
-  <p><%= event.location %></p>
-  <p><%= event.description %></p>
-  <hr>
-<% end %>
+<h2 class="is-size-5">Created Events</h2>
 
 
-<h2>Events</h2>
+<%= events(@user) %>
 
-<% @user.attendances.each do |attendance| %>
+<%= render 'future_events' if @future_ev.any? %>
 
-  <% if attendance.upcomming_event %>
-
-    <h2>Future Events</h2>
-    <p><%= attendance.upcomming_event.name %></p>
-
-  <% elsif attendance.past_event %>
-    <h2>Attended Events</h2>
-    <p><%= attendance.past_event.name %></p>
-
-  <% end %>
-
-<% end %>
+<%= render 'past_events' if @past_ev.any? %>

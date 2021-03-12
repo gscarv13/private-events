@@ -1,0 +1,6 @@
+<h2 class="is-size-5 ml-4">The following errors occurred</h2>
+<ul>
+  <% @user.errors.full_messages.each do |msg|  %>
+  <li class="ml-5 mb-5 has-text-danger"> <%= msg %> </li>
+  <% end %>
+</ul>
