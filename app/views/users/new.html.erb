@@ -1,13 +1,6 @@
 <h1 class="is-size-3 mb-3">Sign Up form</h1>
 
-<% if @user.errors.any? %>
-  <h2 class="is-size-5 ml-4">The following errors occurred</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |msg|  %>
-    <li class="ml-5 mb-5 has-text-danger"> <%= msg %> </li>
-    <% end %>
-  </ul>
-<% end %>
+<% render 'shared/errors' if @user.errors.any? %>
 
 <%= form_with model: @user do |f| %>
   <%= f.label :username, "Username: " %>
