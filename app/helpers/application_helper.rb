@@ -11,4 +11,12 @@ module ApplicationHelper
     end
     output.html_safe
   end
+
+  def flash_alert
+    render 'shared/flash_alert' if flash[:alert]
+  end
+
+  def flash_notice
+    render 'shared/flash_notice' if flash[:notice]
+  end
 end

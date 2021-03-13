@@ -13,8 +13,8 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flash_notice' if flash[:notice] %>
-    <%= render 'shared/flash_alert' if flash[:alert] %>
+    <%= flash_notice %>
+    <%= flash_alert %>
     <div class="section">
       <div class="container p-3">
         <%= yield %>
