@@ -8,4 +8,8 @@ module UserHelper
       out.html_safe
     end
   end
+
+  def display_errors(user)
+    render 'shared/errors' if user.errors.any?
+  end
 end
