@@ -27,9 +27,9 @@ To get a local copy up and running follow these simple example steps.
 
 - Clone this repository using the link above (click on the 'code' button)
 - Open a terminal and `cd` to the cloned repository
-- Run `bundle install` to install required the dependencies
+- Run `bundle install` to install ruby gems required the dependencies
+- Run `yarn` to install javascript required the dependencies
 - Run `bin/rails DB:migrate` to migrate the database
-- Run `bundle exec bin/setup` to reinstall and set up the required packages
 
 ### Usage
 
