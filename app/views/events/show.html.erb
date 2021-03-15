@@ -1,0 +1,24 @@
+<h1 class="is-size-4">Event details</h1>
+
+<br>
+
+<h2 class="is-size-3 mb-3"><%= @event.name %></h2>
+
+<p>Location: <%= @event.location %> </p><br>
+<p>Date: <%= @event.date %></p><br>
+<p>Creator: <%= @event.user.username %></p><br>
+<p>Description: <%= @event.description %> </p>
+
+<%= render 'event_nav' %>
+
+<hr>
+
+<h3>Attendance List</h3>
+<br>
+
+<div class="attendants">
+<% @event.attendances.each do |att| %>
+  <p><%=  att.attendee.username %></p>
+<% end %>
+</div>
+

@@ -1,0 +1,10 @@
+<h1 class="is-size-3"><%= @user.username %>'s Profile</h1><br>
+
+<h2 class="is-size-5">Created Events</h2>
+
+
+<%= events(@user) %>
+
+<%= render 'future_events' if @future_ev.any? %>
+
+<%= render 'past_events' if @past_ev.any? %>

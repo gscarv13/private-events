@@ -1,0 +1,10 @@
+<h1 class="is-size-3 mb-3">Sign Up form</h1>
+
+<%= display_errors(@user) %>
+
+<%= form_with model: @user do |f| %>
+  <%= f.label :username, "Username: " %>
+  <%= f.text_field :username, placeholder: 'Add your nickname here!' %> <br><br>
+
+  <%= f.submit %>
+<% end %>

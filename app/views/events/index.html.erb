@@ -1,0 +1,52 @@
+<div class="mx-auto">
+<h2 class="is-size-4">Future events</h2>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @future.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.date %></td>
+      <td><%= e.location %></td>
+      <td><%= e.description %></td>
+      <td><%= link_to "Details", e, class: 'button is-info' %></td>
+    </tr>
+    <% end %>
+  </tbody>  
+</table>
+
+
+<h2 class="is-size-4">Past events</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @past.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.date %></td>
+      <td><%= e.location %></td>
+      <td><%= e.description %></td>
+      <td><%= link_to "Details", e, class: 'button is-info' %></td>
+    </tr>
+    <% end %>
+  </tbody>  
+</table>
+</div>
